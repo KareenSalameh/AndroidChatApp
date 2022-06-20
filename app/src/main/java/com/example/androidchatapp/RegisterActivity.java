@@ -161,7 +161,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
 
     private void register(String username , String pass, String confirm){
-        setProgressBarVisibility(true); // not sure..
+        //setProgressBarVisibility(true); // not sure..
 
         auth.createUserWithEmailAndPassword(username,pass)
                 .addOnCompleteListener(task -> {
@@ -175,7 +175,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                                     public void onComplete(@NonNull Task<Void> task) {
                                         if(task.isSuccessful()){
                                             Toast.makeText(RegisterActivity.this,"user has been registerd",Toast.LENGTH_LONG).show();
-                                            setProgressBarVisibility(false);
+                                            //setProgressBarVisibility(false);
                                         }else{
                                             Toast.makeText(RegisterActivity.this,"faileD!",Toast.LENGTH_LONG).show();
 
