@@ -1,10 +1,12 @@
-package Messages;
+package com.example.androidchatapp.messages;
 
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.content.res.*;
+import android.widget.ImageView;
+import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -15,10 +17,10 @@ import java.util.List;
 
 public class MessagesAdapter extends RecyclerView.Adapter<MessagesAdapter.MyViewHolder> {
 
-    private final List<Messages.MessagesList> messagesLists;
+    private final List<MessagesList> messagesLists;
     private final Context context;
 
-    public MessagesAdapter(List<Messages.MessagesList> messagesLists, Context context) {
+    public MessagesAdapter(List<MessagesList> messagesLists, Context context) {
         this.messagesLists = messagesLists;
         this.context = context;
     }
@@ -41,8 +43,14 @@ public class MessagesAdapter extends RecyclerView.Adapter<MessagesAdapter.MyView
 
     static class MyViewHolder extends RecyclerView.ViewHolder {
 
+        private ImageView profilePic;
+        private TextView nickname;
+        private TextView lastm;
+
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
+
+           // profilePic = itemView.findViewById(R.id.profilePic);
         }
     }
 }

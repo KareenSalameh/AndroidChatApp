@@ -22,6 +22,7 @@ import android.os.Bundle;
 public class LoginActivity extends AppCompatActivity {
 
     MaterialEditText user, pass;
+
     Button log;
 //firebase
     FirebaseAuth auth;

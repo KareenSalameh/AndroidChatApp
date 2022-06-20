@@ -1,4 +1,4 @@
-package Messages;
+package com.example.androidchatapp.messages;
 
 public class MessagesList {
 
