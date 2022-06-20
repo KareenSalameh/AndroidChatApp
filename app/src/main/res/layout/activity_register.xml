@@ -8,7 +8,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="418dp"
         android:gravity="center_horizontal"
         android:orientation="vertical"
         android:padding="16dp">
@@ -57,21 +57,21 @@
 
 
     <LinearLayout
-        android:layout_width="395dp"
-        android:layout_height="251dp"
-        android:layout_alignParentBottom="true"
+        android:layout_width="394dp"
+        android:layout_height="102dp"
         android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="17dp"
         android:layout_marginBottom="136dp"
-        android:layout_marginEnd="24dp"
-        android:paddingTop="13dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:paddingTop="13dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="77dp"
-            android:paddingRight="10dp"
-            android:paddingTop="5dp"
             android:paddingLeft="10dp"
+            android:paddingTop="5dp"
+            android:paddingRight="10dp"
             android:text="if you have already a user, click here" />
 
         <ImageButton
