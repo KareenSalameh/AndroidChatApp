@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity">
+    tools:context=".RegisterActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -12,21 +12,29 @@
         android:gravity="center_horizontal"
         android:orientation="vertical"
         android:padding="16dp">
+        <!--        android:layout_below="@id/toolbar"-->
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Login"
+            android:text="@string/register_text"
             android:textSize="30dp"
             android:textStyle="bold" />
-
 
         <com.rengwuxian.materialedittext.MaterialEditText
             android:id="@+id/password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:hint="@string/password"
+            android:hint="@string/register_password"
+            app:met_floatingLabel="normal" />
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/confirm_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="@string/confirm_password"
             app:met_floatingLabel="normal" />
 
         <com.rengwuxian.materialedittext.MaterialEditText
@@ -34,47 +42,47 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:hint="@string/username"
+            android:hint="@string/register_username"
             app:met_floatingLabel="normal" />
 
         <Button
-            android:id="@+id/btn_login"
+            android:id="@+id/btn_register"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="@string/log_in"
+            android:text="@string/sign_up"
             android:textColor="#ffff"
             tools:ignore="TextContrastCheck" />
-
-
     </LinearLayout>
+
 
     <LinearLayout
         android:layout_width="395dp"
         android:layout_height="251dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginBottom="181dp"
-        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="136dp"
+        android:layout_marginEnd="24dp"
+        android:paddingTop="13dp"
         android:orientation="horizontal">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="77dp"
             android:paddingRight="10dp"
-            android:paddingTop="4dp"
+            android:paddingTop="5dp"
             android:paddingLeft="10dp"
-            android:text="if you don't have an account, click here" />
+            android:text="if you have already a user, click here" />
 
         <ImageButton
-            android:id="@+id/register_link"
+            android:id="@+id/login_link"
             android:layout_width="10dp"
             android:layout_height="32dp"
             android:layout_weight="1"
             android:paddingBottom="10dp"
             app:srcCompat="@android:drawable/stat_notify_sync_noanim" />
-
     </LinearLayout>
+
 
 
 </RelativeLayout>
