@@ -45,11 +45,11 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-       /* ImageButton hyper = findViewById(R.id.login_link);
+       ImageButton hyper = findViewById(R.id.login_link);
         hyper.setOnClickListener(v -> {
             Intent i = new Intent(this, LoginActivity.class);
             startActivity(i);
-        });*/
+        });
         final EditText username = findViewById(R.id.username);
         final EditText pass = findViewById(R.id.password);
         final EditText confpass = findViewById(R.id.confirm_password);
