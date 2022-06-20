@@ -6,4 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".ChatActivity">
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="622dp"
+        android:layout_height="113dp"
+        android:text="This is the chat"
+        tools:layout_editor_absoluteX="311dp"
+        tools:layout_editor_absoluteY="147dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -57,43 +58,59 @@ public class RegisterActivity extends AppCompatActivity {
                 } else if ( txt_pass.length() < 8){
                     Toast.makeText(RegisterActivity.this , "Password must be at least 8 characters", Toast.LENGTH_SHORT).show();
                 } else {
-                    //register(txt_username,txt_pass, txt_conf);
+                    register(txt_username,txt_pass, txt_conf);
                 }
             }
         });
     }
 
     private void register(String username , String pass, String confirm){
-        auth.createUserWithEmailAndPassword(username,pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if(task.isSuccessful()){
-                    FirebaseUser firebaseUser = auth.getCurrentUser();
-                    String userid =firebaseUser.getUid();
+        setProgressBarVisibility(true); // not sure..
 
-                    ref = FirebaseDatabase.getInstance().getReference("Users").child(userid);
+        auth.createUserWithEmailAndPassword(username,pass)
+                .addOnCompleteListener(task -> {
+                    if(task.isSuccessful()){
+                        //
+                        User user = new User(username,pass);
+                        FirebaseDatabase.getInstance().getReference("Users")
+                                .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                                .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<Void> task) {
+                                        if(task.isSuccessful()){
+                                            Toast.makeText(RegisterActivity.this,"user has been registerd",Toast.LENGTH_LONG).show();
+                                            setProgressBarVisibility(false);
+                                        }else{
+                                            Toast.makeText(RegisterActivity.this,"faileD!",Toast.LENGTH_LONG).show();
 
-                    HashMap<String,String> hashMap = new HashMap<>();
-                    hashMap.put("id", userid);
-                    hashMap.put("username", username);
-                    hashMap.put("imageURL", "default");
-
-                    ref.setValue(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {
-                        @Override
-                        public void onComplete(@NonNull Task<Void> task) {
-                            if(task.isSuccessful()){
-                                Intent intent = new Intent(RegisterActivity.this , ChatActivity.class);
-                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-                                startActivity(intent);
-                                finish();
-                            }
-                        }
-                    });
-                } else {
-                    Toast.makeText(RegisterActivity.this, "You Can't register!", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
+                                        }
+                                    }
+                                });
+    //                    FirebaseUser firebaseUser = auth.getCurrentUser();
+    //                    String userid =firebaseUser.getUid();
+    //
+    //                    ref = FirebaseDatabase.getInstance().getReference("Users").child(userid);
+    //
+    //                    HashMap<String,String> hashMap = new HashMap<>();
+    //                    hashMap.put("id", userid);
+    //                    hashMap.put("username", username);
+    //                    hashMap.put("imageURL", "default");
+    //
+    //                    ref.setValue(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+    //                        @Override
+    //                        public void onComplete(@NonNull Task<Void> task) {
+    //                            if(task.isSuccessful()){
+    //                                Intent intent = new Intent(RegisterActivity.this , ChatActivity.class);
+    //                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+    //                                startActivity(intent);
+    //                                finish();
+    //                            }
+    //                        }
+    //                    });
+                    } else {
+                        Toast.makeText(RegisterActivity.this, "You Can't register!", Toast.LENGTH_SHORT).show();
+                    }
+                });
     }
 
 }
