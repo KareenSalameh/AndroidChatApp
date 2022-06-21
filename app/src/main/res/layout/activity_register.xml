@@ -76,4 +76,23 @@
         android:textStyle="bold"
         android:background="#A1E6EF"/>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="105dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="77dp"
+            android:paddingLeft="10dp"
+            android:paddingTop="4dp"
+            android:paddingRight="10dp"
+            android:text="if you don't have an account, click here" />
+        <ImageButton
+            android:id="@+id/login_link"
+            android:layout_width="10dp"
+            android:layout_height="32dp"
+            android:layout_weight="1"
+            android:paddingBottom="10dp"
+            app:srcCompat="@android:drawable/stat_notify_sync_noanim" />
+    </LinearLayout>
+
 </LinearLayout>
