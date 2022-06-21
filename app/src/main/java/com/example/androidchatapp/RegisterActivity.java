@@ -98,7 +98,7 @@ public class RegisterActivity extends AppCompatActivity {
 
                                         Toast.makeText(RegisterActivity.this, "user has been registered successfully", Toast.LENGTH_SHORT).show();
 
-                                        Intent intent = new Intent(RegisterActivity.this, ChatActivity.class);
+                                        Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
                                         intent.putExtra("username", txt_username);
                                         intent.putExtra("pass", txt_pass);
                                         startActivity(intent);
