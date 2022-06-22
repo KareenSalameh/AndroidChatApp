@@ -22,7 +22,7 @@ public final class Memory {
             e.printStackTrace();
         }
     }
-    public static void saveName(String data, Context context){
+    public static void savePass(String data, Context context){
         try{
             FileOutputStream fileOutputStream = context.openFileOutput("namee.txt", Context.MODE_PRIVATE);
             fileOutputStream.write(data.getBytes());
@@ -49,10 +49,27 @@ public final class Memory {
         return data;
     }
 
-    public static String getName(Context context){
+    public static String getNickname(Context context){
         String data= "";
         try {
-            FileInputStream fis = context.openFileInput("namee.txt");
+            FileInputStream fis = context.openFileInput("nickname.txt");
+            InputStreamReader isr = new InputStreamReader(fis);
+            BufferedReader bufferedReader = new BufferedReader(isr);
+            StringBuilder sb = new StringBuilder();
+            String line;
+            while ((line = bufferedReader.readLine()) != null){
+                sb.append(line);
+            }
+        }catch (IOException e) {
+            e.printStackTrace();
+        }
+        return data;
+    }
+
+    public static String getPass(Context context){
+        String data= "";
+        try {
+            FileInputStream fis = context.openFileInput("pass.txt");
             InputStreamReader isr = new InputStreamReader(fis);
             BufferedReader bufferedReader = new BufferedReader(isr);
             StringBuilder sb = new StringBuilder();

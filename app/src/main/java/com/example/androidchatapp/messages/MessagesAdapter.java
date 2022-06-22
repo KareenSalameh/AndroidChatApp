@@ -34,6 +34,11 @@ public class MessagesAdapter extends RecyclerView.Adapter<MessagesAdapter.MyView
     @Override
     public void onBindViewHolder(@NonNull MessagesAdapter.MyViewHolder holder, int position) {
 
+        MessagesList list2 = messagesLists.get(position);
+
+       // holder.name.setText(list2.getUser());
+        holder.nickname.setText(list2.getNickname());
+        holder.lastm.setText(list2.getLastMessage());
     }
 
     @Override
@@ -44,13 +49,17 @@ public class MessagesAdapter extends RecyclerView.Adapter<MessagesAdapter.MyView
     static class MyViewHolder extends RecyclerView.ViewHolder {
 
         private ImageView profilePic;
+       // private TextView name;
         private TextView nickname;
         private TextView lastm;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
-           // profilePic = itemView.findViewById(R.id.profilePic);
+            //name = itemView.findViewById(R.id.username);
+            nickname = itemView.findViewById(R.id.nickName);
+            lastm = itemView.findViewById(R.id.lastmessage);
+            profilePic = itemView.findViewById(R.id.profilepic);
         }
     }
 }

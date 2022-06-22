@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    android:background="#DDF9FB"
+    android:background="#EAFAFB"
     tools:context=".RegisterActivity">
 
 
@@ -15,6 +15,7 @@
             android:layout_height="wrap_content"
             android:textAllCaps="true"
             android:gravity="center"
+            android:textColor="#ffff"
             android:text="@string/register_text"
             android:textSize="30dp"
             android:textStyle="bold" />
@@ -33,6 +34,21 @@
             android:textSize="16sp"
             android:paddingEnd="0dp"
             android:background="@color/white" />
+
+    <EditText
+        android:id="@+id/nickname"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:hint="NickName"
+        android:inputType="text"
+        android:maxLines="1"
+        android:paddingStart="20dp"
+        android:textSize="16sp"
+        android:paddingEnd="0dp"
+        android:background="@color/white" />
 
     <EditText
         android:id="@+id/password"
@@ -66,31 +82,33 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_register"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="285dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="40dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginStart="20dp"
+        android:background="#6924E4"
         android:text="Sign Up"
-        android:textColor="#000000"
-        android:textStyle="bold"
-        android:background="#A1E6EF"/>
+        android:textColor="#ffff"
+        android:textStyle="bold" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="105dp">
+        android:layout_height="201dp">
+
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="77dp"
+            android:layout_height="115dp"
             android:paddingLeft="10dp"
-            android:paddingTop="4dp"
+            android:paddingTop="35dp"
             android:paddingRight="10dp"
             android:text="if you don't have an account, click here" />
+
         <ImageButton
             android:id="@+id/login_link"
-            android:layout_width="10dp"
+            android:layout_width="88dp"
             android:layout_height="32dp"
-            android:layout_weight="1"
+            android:layout_marginTop="30dp"
             android:paddingBottom="10dp"
             app:srcCompat="@android:drawable/stat_notify_sync_noanim" />
     </LinearLayout>

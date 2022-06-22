@@ -45,15 +45,27 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-       ImageButton hyper = findViewById(R.id.login_link);
+        ImageButton hyper = findViewById(R.id.login_link);
         hyper.setOnClickListener(v -> {
             Intent i = new Intent(this, LoginActivity.class);
             startActivity(i);
         });
         final EditText username = findViewById(R.id.username);
+        final EditText nickname = findViewById(R.id.nickname);
         final EditText pass = findViewById(R.id.password);
         final EditText confpass = findViewById(R.id.confirm_password);
         final AppCompatButton reg = findViewById(R.id.btn_register);
+
+        if(!Memory.getData(this).isEmpty()){
+
+            Intent intent = new Intent(RegisterActivity.this, ChatActivity.class);
+            intent.putExtra("username", Memory.getData(this));
+            intent.putExtra("nickname", Memory.getNickname(this));
+            intent.putExtra("pass", Memory.getPass(this));
+            startActivity(intent);
+            finish();
+
+        }
 
         reg.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,12 +73,18 @@ public class RegisterActivity extends AppCompatActivity {
                 switch (view.getId()) {
                     case R.id.btn_register:
                         String txt_username = username.getText().toString();
+                        String txt_nickname = nickname.getText().toString();
                         String txt_pass = pass.getText().toString();
                         String txt_conf = confpass.getText().toString();
 
                         if (txt_username.isEmpty()) {
                             username.setError("Username is Required");
                             username.requestFocus();
+                            return;
+                        }
+                        if (txt_nickname.isEmpty()) {
+                            nickname.setError("Nickname is Required");
+                            nickname.requestFocus();
                             return;
                         }
                         if (txt_pass.isEmpty()) {
@@ -79,11 +97,15 @@ public class RegisterActivity extends AppCompatActivity {
                             pass.requestFocus();
                             return;
                         }
-                        if (txt_conf.isEmpty()) {
-                            confpass.setError("Please confirm password");
+                        if (!txt_conf.equals(txt_pass)) {
+                            confpass.setError("Passwords not matching");
                             confpass.requestFocus();
                             return;
-                        }else {
+                        } if (txt_conf.isEmpty()) {
+                        confpass.setError("Please confirm password");
+                        confpass.requestFocus();
+                        return;
+                        } else {
                             // ref=FirebaseDatabase.getInstance().getReferenceFromUrl("https://finalapp-145f1-default-rtdb.firebaseio.com/");
                             ref.addListenerForSingleValueEvent(new ValueEventListener() {
                                 @Override
@@ -91,14 +113,16 @@ public class RegisterActivity extends AppCompatActivity {
                                     if (snapshot.child("users").hasChild(txt_username)) {
                                         Toast.makeText(RegisterActivity.this, "User already exists", Toast.LENGTH_SHORT).show();
                                     } else {
-                                        ref.child("users").child(txt_username).child("pass").setValue(txt_pass);
+                                        ref.child("users").child(txt_username).child("nickname").setValue(txt_nickname);
+                                        ref.child("users").child(txt_username).child("password").setValue(txt_pass);
 
                                         //save username to memory
                                         Memory.saveData(txt_username, RegisterActivity.this);
+                                        Memory.saveData(txt_nickname, RegisterActivity.this);
 
                                         Toast.makeText(RegisterActivity.this, "user has been registered successfully", Toast.LENGTH_SHORT).show();
 
-                                        Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                                        Intent intent = new Intent(RegisterActivity.this, ChatActivity.class);
                                         intent.putExtra("username", txt_username);
                                         intent.putExtra("pass", txt_pass);
                                         startActivity(intent);
@@ -112,7 +136,6 @@ public class RegisterActivity extends AppCompatActivity {
 
                                 }
                             });
-                            break;
                         }
                 }
             }
