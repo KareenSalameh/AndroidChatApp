@@ -2,15 +2,16 @@ package com.example.androidchatapp.messages;
 
 public class MessagesList {
 
-    private String user , nick, lastMessage ;
+    private String user , nick, lastMessage , chatKey;
 
     private int dateOfMessage;
 
-    public MessagesList(String user, String nick){
+    public MessagesList(String user, String nick, String lastMessage, int dateOfMessage, String chatKey){
         this.user = user;
         this.lastMessage = lastMessage;
         this.dateOfMessage = dateOfMessage;
         this.nick = nick;
+        this.chatKey = chatKey;
     }
 
     public String getUser() {
@@ -27,5 +28,9 @@ public class MessagesList {
 
     public int getDateOfMessage() {
         return dateOfMessage;
+    }
+
+    public String getChatKey() {
+        return chatKey;
     }
 }

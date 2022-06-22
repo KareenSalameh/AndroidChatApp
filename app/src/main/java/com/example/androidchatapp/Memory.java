@@ -22,9 +22,9 @@ public final class Memory {
             e.printStackTrace();
         }
     }
-    public static void savePass(String data, Context context){
+    public static void saveLastMsg(String data, String chatId,Context context){
         try{
-            FileOutputStream fileOutputStream = context.openFileOutput("namee.txt", Context.MODE_PRIVATE);
+            FileOutputStream fileOutputStream = context.openFileOutput(chatId+".txt", Context.MODE_PRIVATE);
             fileOutputStream.write(data.getBytes());
             fileOutputStream.close();
         } catch (IOException e) {
@@ -53,6 +53,22 @@ public final class Memory {
         String data= "";
         try {
             FileInputStream fis = context.openFileInput("nickname.txt");
+            InputStreamReader isr = new InputStreamReader(fis);
+            BufferedReader bufferedReader = new BufferedReader(isr);
+            StringBuilder sb = new StringBuilder();
+            String line;
+            while ((line = bufferedReader.readLine()) != null){
+                sb.append(line);
+            }
+        }catch (IOException e) {
+            e.printStackTrace();
+        }
+        return data;
+    }
+    public static String getLastMsg(Context context, String chatId ){
+        String data= "0";
+        try {
+            FileInputStream fis = context.openFileInput(chatId+".txt");
             InputStreamReader isr = new InputStreamReader(fis);
             BufferedReader bufferedReader = new BufferedReader(isr);
             StringBuilder sb = new StringBuilder();

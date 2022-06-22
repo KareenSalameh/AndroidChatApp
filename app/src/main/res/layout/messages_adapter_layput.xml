@@ -4,6 +4,7 @@
     android:layout_height="match_parent">
 
     <LinearLayout
+        android:id="@+id/rootLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical" >
@@ -32,7 +33,7 @@
                 android:layout_toEndOf="@+id/profilepic">
                 
                 <TextView
-                    android:id="@+id/nickName"
+                    android:id="@+id/nickname"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:maxLines="1"
@@ -41,7 +42,7 @@
                     android:textStyle="bold"/>
 
                 <TextView
-                    android:id="@+id/lastmessage"
+                    android:id="@+id/lastMessage"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:maxLines="1"
