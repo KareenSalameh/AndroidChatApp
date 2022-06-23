@@ -23,9 +23,7 @@ You can move to the SigUp Page by clicking the button in Login (click here to re
 For the Register page, there is a validation system also for confirm password and
 a proper password type (8 characters)
  
-The chat page is made by two pages: users where you will choose your contact to chat with
+The chat page is made by two pages: users where you will choose your contact to chat with.
+
 Chat room where you will send messages.
-
-REST API:
-
 
