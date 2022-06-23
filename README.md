@@ -31,10 +31,12 @@ a proper password type (8 characters)
  
 The chat page is made by two pages: users where you will choose your contact to chat with.
 This is the Contacts Screen : 
+
 ![image](https://user-images.githubusercontent.com/73133299/175397220-4212c683-f3bf-42e1-a359-cfed46bbe49f.png)
 
 
 Chat room where you will send messages.
+
 ![image](https://user-images.githubusercontent.com/73133299/175397440-3373047e-23aa-4605-91d0-e3b5f8b20ed6.png)
 
 
