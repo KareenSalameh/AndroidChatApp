@@ -29,14 +29,4 @@ Chat room where you will send messages.
 
 REST API:
 
-As we learned about API controller, we can run it in this way https://localhost:7182/api/contacts 
-contacts: is the name of our API controller.
-Once running the link it should gives you GetAll users method 
 
-[![Screenshot-API.png](https://i.postimg.cc/cCZ7xVsz/Screenshot-API.png)](https://postimg.cc/njR9TS9K)
-
-For example try GET METHOD by pasting this link https://localhost:7182/api/contacts/JimHal  
-
-it should give you this JSON : {"id":"JimHal","name":"Jimothy","password":"12345","server":"localhost:7265","last":"video","lastDate":"17:28"}
-
-*GET METHOD used like this: https://localhost:7182/api/contacts/id
