@@ -4,9 +4,11 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/ori/AndroidStudioProjects/AndroidChatApp/app/src/main/res/layout/activity_chat.xml" value="0.14" />
+        <entry key="..\:/Users/ori/AndroidStudioProjects/AndroidChatApp/app/src/main/res/layout/activity_chat2.xml" value="0.21467391304347827" />
         <entry key="..\:/Users/ori/AndroidStudioProjects/AndroidChatApp/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/Users/ori/AndroidStudioProjects/AndroidChatApp/app/src/main/res/layout/activity_register.xml" value="0.25" />
         <entry key="..\:/Users/ori/AndroidStudioProjects/AndroidChatApp/app/src/main/res/layout/bar_layout.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/ori/AndroidStudioProjects/AndroidChatApp/app/src/main/res/layout/messages_adapter_layput.xml" value="0.21467391304347827" />
         <entry key="..\:/Users/pc2/AndroidStudioProjects/AndroidChatAppKaren/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
         <entry key="..\:/Users/pc2/AndroidStudioProjects/AndroidChatAppKaren/app/src/main/res/drawable/back_btn.xml" value="0.1685" />
         <entry key="..\:/Users/pc2/AndroidStudioProjects/AndroidChatAppKaren/app/src/main/res/drawable/ic_baseline_send_24.xml" value="0.1685" />

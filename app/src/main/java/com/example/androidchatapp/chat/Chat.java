@@ -18,7 +18,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class Chat extends AppCompatActivity {
-    DatabaseReference ref= FirebaseDatabase.getInstance().getReferenceFromUrl("https://androidchatapp-f44d4-default-rtdb.firebaseio.com");
+    DatabaseReference ref= FirebaseDatabase.getInstance().getReference();
     private String chatKey;
     String getUsername = "";
 

@@ -37,7 +37,7 @@ public class RegisterActivity extends AppCompatActivity {
     //MaterialEditText username, pass , confpass;
     //  Button reg;
     FirebaseAuth auth;
-    DatabaseReference ref=FirebaseDatabase.getInstance().getReferenceFromUrl("https://androidchatapp-f44d4-default-rtdb.firebaseio.com");
+    DatabaseReference ref=FirebaseDatabase.getInstance().getReference();
 
 
     @Override
