@@ -19,6 +19,7 @@ All the users are stored in firebase database.
 
 
 You can move to the SigUp Page by clicking the button in Login (click here to register)
+
 ![image](https://user-images.githubusercontent.com/73133299/175397086-4d34c95f-dc4a-405f-bea6-b3a656b39ed8.png)
 
 
