@@ -9,9 +9,8 @@ Please note you're  running the application on Android studio
 Once you start running you will see the main page in  which is Login page.
 
 You need to type on the following text box user name and password, for sign in properly 
-Use the following user: 
-User name : Karen
-Password : 1111
+Use the following users: 
+![image](https://user-images.githubusercontent.com/73133299/175396538-ec5aa311-855d-4173-bc06-89ea18b7e5d4.png)
 
 If you won't type any character, the app will show you an error message.
 For addition there is a validation system for checking if the user is signed up before.
